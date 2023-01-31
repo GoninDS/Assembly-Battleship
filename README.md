@@ -1,83 +1,74 @@
-# **CI-0119 Proyecto integrado Battleship**
+# **Assembly-Battleship**
 
-## **Repositorio para el curso CI-0119 con proyecto integrado de Battleship.**
+## **Repository to archive Battleship project in Assembly and C++**
 
-### **Integrantes:**
+### **Developed by:**
 
-Archibald Emmanuel Carrion Claeys - C01736
++ [Archibald Carrion](https://github.com/archibald-carrion) (C++ SFML developer)
++ [Fabián Vega](https://github.com/Fabian-Vega) (C++ developer / sprite designer)
++ [Alberto González](https://github.com/albgondiga) (Assembly developer / C++ developer)
++ [Luis Solano](https://github.com/GoninDS) (Assembly developer / C++ developer)
 
-Fabián Vega Meza - C08369
+### **Project description:**
 
-Alberto González Avendaño - C13248
+This repository is used to archive the development and code of an implementation of the board game Battleship. For the creation of this project C++ was used to handle the states of the game and the representation of the graphic design. Assembly was used to handle the game functions directly.
 
-Luis David Solano Santamaría - C17634
+*Developed during August-November 2022*
 
-### **Descripción de proyecto:**
+### **Battleship rules:**
 
-Este repositorio se utilizó para desarrollar una aplicación para jugar el juego de mesa Battleship. Para la realización del proyecto se utilizó conexión entre C++ para la representación gráfica  y lenguaje ensamblador para el control de juego.
+1. Players must place their ships in (horizontal or vertical) valid positions according to the ship size.
 
-### **Reglas de juego:**
+2. The game is turn-based, if a player hits a ship their turn will continue until they miss. 
 
-1. Los jugadores deben colocar todas sus naves en posiciones y direcciones (horizontal o vertical) válidas.
+3. To win a match, a player must sink all of the enemy ships. Each player, in their respective turns, can also abandon the game forfeiting the match.
 
-2. El juego se realiza por medio de turnos. En caso de dañar una nave el turno se repite.
+4. To damage a ship each player must guess the position in a 7x7 board. If the player guesses correctly, the attack on the ship will be registered with a **red square**. To completely sink a ship all parts of the ship must be hit.  
 
-3. La partida puede terminar si alguno de los dos jugadores decide abandonarla.
+5. It is forbidden to attack positions out of the board or previously attacked positions.
 
-4. Para que un jugador termine la partida victorioso, todas las naves del oponente deben ser eliminadas.
+6. Players can't see the position of their opponent's ships unless they are hit or sunken.
 
-5. La manera de eliminar una nave consiste en adivinar atacando una posición. En caso de que la posición tenga una nave, se registrará como un disparo exitoso. Para poder eliminar una nave todas sus casillas deben ser disparadas.
+### **How to play:**
 
-6. No se pueden acceder posiciones fuera del tablero ni posiciones que ya fueron atacadas.
+The game consists of two different phases. During the first phase players will place their ships, this can only be done **at the beginning of the match**.
 
-7. Los jugadores no pueden ver las posiciones de las naves de su oponente.
+To place a ship correctly, follow the following steps:
 
-### **¿Cómo jugar?**
+1. Press the number of the desired **column**
 
-La etapa de juego se divide en dos fases. La primera consiste en colocar naves.
+2. Press the **enter** key to confirm the column. In case of wanting to place the ship on a different position press **backspace**. 
 
-Para colocar un barco se deben seguir los siguientes pasos:
+3. Repeat the same process for the **row**
 
-1. Presionar el número de columna
+4. Press the green arrow button **on screen** to choose a direction
 
-2. Presionar la tecla enter para confirmar su selección
+5. Press the **PLACE SHIP** button
 
-3. Presionar el número de fila
+To attempt an attack follow the following steps:
 
-4. Presionar la tecla enter para confirmar su selección
+1. Press the number of the desired **column**
 
-5. Presionar la flecha para escoger la dirección de la nave
+2. Press the **enter** key to confirm the column. In case of wanting to place the ship on a different position press **backspace**. 
 
-6. Presionar el botón **PLACE SHIP**
+3. Repeat the same process for the **row**
 
-Para la etapa de ataque se deben seguir los siguientes pasos:
+4. Press the **ATTACK** button
 
-1. Presionar el número de columna
+### **Compilation manual:**
 
-2. Presionar la tecla enter para confirmar su selección
-
-3. Presionar el número de fila
-
-4. Presionar la tecla enter para confirmar su selección
-
-5. Presionar el botón **ATTACK**
-
-En caso de haber escogido una fila o columna errónea, sin haber presionado enter, se puede deshacer la selección con la tecla backspace.
-
-### **Instrucciones de compilación:**
-
-Para poder compilar el programa debe encontrarse en una distribución de Linux, preferiblemente Ubuntu. La interfaz gráfica se realiza utilizando la herramienta **SFML.** Para esto debe tenerla instalada. En caso de no tener **SFML** puede ejecutar el siguiente comando:
+To compile the program, you must be on a Linux distribution (preferably Ubuntu). Because the graphic interface is done through **SFML** it is required that it is installed. In case of not having **SFML** installed, you can execute the following command in the terminal:
 
     sudo apt-get install libsfml-dev
 
-En caso de tener más consultas sobre la instalación de **SFML** en Linux puede consultar
+In case of having doubts about the **SFML** installation you can consult
 
     https://www.sfml-dev.org/tutorials/2.5/start-linux.php
 
-Para compilar puede ejecutar el siguiente comando dentro de la carpeta src:
+To compile execute the following command inside the dev folder
 
     make
 
-Luego para ejecutar inserte en linea de comandos:
+Then to execute run
 
     ./game.out
