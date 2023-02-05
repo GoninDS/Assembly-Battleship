@@ -2,6 +2,8 @@
 
 ## **Repository to archive Battleship project in Assembly and C++**
 
+![menu_view](./dev/src/assets/menuMain.png "Menu view")
+
 ### **Developed by:**
 
 + [Archibald Carrion](https://github.com/archibald-carrion) (C++ SFML developer)
@@ -72,3 +74,6 @@ To compile execute the following command inside the dev folder
 Then to execute run
 
     ./game.out
+
+
+![abandon](./dev/src/assets/AbandonGame1.png "Abandon Match")
